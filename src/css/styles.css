@@ -14,7 +14,6 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
-  background-color: #464343;
 }
 a {
   color: inherit;
@@ -26,10 +25,14 @@ img {
   max-width: 100%;
   transition: transform var(--animation-duration) var(--timing-function);
 }
+button {
+  height: 40px;
+  border-radius: 5px;
+}
 
 .search-form {
   background-color: rgb(242, 123, 26);
-  height: 50px;
+  height: 60px;
   display: flex;
   justify-content: center;
   padding: 10px;
@@ -40,7 +43,11 @@ img {
   top: 0;
   right: 0;
 }
-
+input {
+  margin-right: 10px;
+  height: 40px;
+  border-radius: 5px;
+}
 .gallery {
   display: flex;
   flex-wrap: wrap;

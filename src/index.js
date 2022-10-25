@@ -32,6 +32,9 @@ submit.addEventListener('click', event => {
 loadMore.addEventListener('click', fetchPhoto);
 
 function fetchPhoto() {
+  if (!input.value) {
+    return;
+  }
   searchPhoto()
     .then(data => dataHandling(data))
     .catch(() => {
@@ -48,12 +51,12 @@ async function searchPhoto() {
       '?key=' +
       API_KEY +
       '&q=' +
-      input.value +
+      input.value.trim().toLowerCase() +
       '&image_type=photo&orientation=horizontal&safesearch=true&page=' +
       page +
       '&per_page=40'
   );
-  searchText - input.value;
+  searchText = input.value;
   return result.json();
 }
 
