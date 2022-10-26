@@ -2,6 +2,7 @@ import { loadMore } from '../index.js';
 
 const SEARCH_URL = 'https://pixabay.com/api/';
 const API_KEY = '30834606-0dc24151179eb34ac466f7732';
+let searchText = '';
 
 async function searchPhoto(input, page) {
   loadMore.classList.add('is-hidden');
