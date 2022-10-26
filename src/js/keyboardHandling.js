@@ -1,5 +1,5 @@
-import { fetchPhoto } from '../index';
-import { gallery } from '../index';
+import { fetchPhoto } from '../index.js';
+import { gallery } from '../index.js';
 
 function keyHandl(input) {
   window.addEventListener('keydown', keyHandling);

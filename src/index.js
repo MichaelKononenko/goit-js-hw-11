@@ -2,7 +2,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import './css/styles.css';
 import { searchPhoto } from './js/fetchPhotos.js';
 import { renderData } from './js/renderData.js';
-import { keyHandl } from './js/keyboardHandling';
+import { keyHandl } from './js/keyboardHandling.js';
 
 const input = document.querySelector('input');
 const submit = document.querySelector('button');
