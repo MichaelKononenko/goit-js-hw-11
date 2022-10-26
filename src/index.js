@@ -82,11 +82,11 @@ function renderData(data) {
   gallery.innerHTML += data.hits.reduce(
     (result, item) =>
       (result += `<div class="photo-card"><a href="${item.webformatURL}">
-    <img src="${item.webformatURL}" alt="${item.tags}" loading="lazy" />
+    <img class="photo" src="${item.webformatURL}" alt="${item.tags}" loading="lazy" />
     <div class="info">
       <p class="info-item">
         <b>Likes</b>
-        ${item.likes}
+        <span>${item.likes}</span>
       </p>
       <p class="info-item">
         <b>Views</b>
