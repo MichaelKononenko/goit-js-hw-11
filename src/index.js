@@ -52,14 +52,12 @@ function dataHandling(data) {
     );
     return;
   }
-  console.log(data.hits.length);
   if(data.hits.length === 40){
   loadMore.classList.remove('is-hidden');
   }
   Notify.success(`Hooray! We found ${data.totalHits} images.`);
 
   renderData(data);
-  console.log(window.page);
   window.page += 1;
 
 }
