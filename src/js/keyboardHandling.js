@@ -1,5 +1,6 @@
 import { fetchPhoto } from '../index.js';
 import { gallery } from '../index.js';
+import { page } from '../index.js';
 
 function keyHandl(input) {
   window.addEventListener('keydown', keyHandling);
@@ -11,6 +12,7 @@ function keyHandl(input) {
     } else if (event.code === 'Backspace') {
       input.value = '';
       gallery.innerHTML = '';
+      window.page = 1;
     } else {
       return;
     }

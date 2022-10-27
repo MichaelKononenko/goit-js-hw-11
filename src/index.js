@@ -9,19 +9,20 @@ const submit = document.querySelector('button');
 const gallery = document.querySelector('.gallery');
 const loadMore = document.querySelector('.load-more');
 
-let page = 1;
+window.page = 1;
+// let page = 1;
 let searchText = '';
 
 keyHandl(input);
 
 submit.addEventListener('click', event => {
   event.preventDefault();
-  if (!input.value) {
+  if (!input.value.trim()) {
     return;
   }
   if (input.value != searchText) {
     gallery.innerHTML = '';
-    page = 1;
+    window.page = 1;
   }
   fetchPhoto();
 });
@@ -30,11 +31,11 @@ loadMore.addEventListener('click', fetchPhoto);
 
 function fetchPhoto() {
   searchText = input.value;
-  if (!input.value) {
+  if (!input.value.trim()) {
     return;
   }
   const toFind = input.value.trim().toLowerCase();
-  searchPhoto(toFind, page)
+  searchPhoto(toFind, window.page)
     .then(data => dataHandling(data))
     .catch(error => {
       console.log(error);
@@ -51,12 +52,16 @@ function dataHandling(data) {
     );
     return;
   }
+  console.log(data.hits.length);
+  if(data.hits.length === 40){
   loadMore.classList.remove('is-hidden');
-
+  }
   Notify.success(`Hooray! We found ${data.totalHits} images.`);
 
   renderData(data);
-  page += 1;
+  console.log(window.page);
+  window.page += 1;
+
 }
 
 export { loadMore, gallery, fetchPhoto };
