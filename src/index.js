@@ -10,7 +10,6 @@ const gallery = document.querySelector('.gallery');
 const loadMore = document.querySelector('.load-more');
 
 window.page = 1;
-// let page = 1;
 let searchText = '';
 
 keyHandl(input);

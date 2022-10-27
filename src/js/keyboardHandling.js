@@ -10,7 +10,7 @@ function keyHandl(input) {
     } else if (event.code === 'Enter') {
       fetchPhoto();
     } else if (event.code === 'Backspace') {
-      input.value = '';
+      input.value = input.value.slice(0, -1);
       gallery.innerHTML = '';
       window.page = 1;
     } else {
